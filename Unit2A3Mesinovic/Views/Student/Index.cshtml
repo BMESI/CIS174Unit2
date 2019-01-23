@@ -1,0 +1,81 @@
+﻿    @model Unit2A3Mesinovic.Models.StudentModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        .container {
+            border:2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1> Unit 2: Assignment 3</h1>
+    <h2>
+        For this assignment we will be taking what we learned during the presentation and working on creating the basic MVC website structure and a simple web application.
+        You may also use the MVC basics video to help you with this assignment.
+        We will be using part of the class period this week to work on this so we have time to ask questions and get help from me and your class mates on this first assignment where we are writing some code. Below are the requirements:
+    </h2>
+    <p> Acceptance Criteria:</p>
+    <ul>
+        <li>  Use the MVC structure that we used in class and the video set up a new EMPTY site with MVC folders</li>
+        <li>  Create a simple page that displays personal details</li>
+        <li> Page should have a label and field for First Name</li>
+        <li> Page should have label and field for Last Name</li>
+        <li> Page should have label and field for an Enumerable for gender</li>
+        <li> Page should have a label and field for age</li>
+        <li>  Page should have a label and field Major</li>
+        <li>  You do NOT need to use a database, you can hard code this just like we did in class.</li>
+    </ul>
+    <div class="container">
+        <h3>Data pulled from controller</h3>
+        <!--These work correctly (pulled from controller)-->
+        <p>
+            @Html.LabelFor(m => m.FirstName)
+            @Html.DisplayFor(m => m.FirstName)
+            @Html.LabelFor(m => m.LastName)
+            @Html.DisplayFor(m => m.LastName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Age)
+            @Html.DisplayFor(m => m.Age)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Major)
+            @Html.DisplayFor(m => m.Major)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Gender)
+            @Html.DisplayFor(m => m.Gender)
+        </p>
+    </div>
+    <!-- I was unable to pull data from Orchestrator... but this fixed it!-->
+    <!--   The code after the loop used in this portion comes from :
+        https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application !-->
+    
+    @foreach (var item in Model.StudentsList)
+    {
+        <div class="container">
+            <h3>Data pulled from orchestrator</h3>
+            <p>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.Major)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.Age)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </p>
+        </div>
+    }
+</body>
+</html>

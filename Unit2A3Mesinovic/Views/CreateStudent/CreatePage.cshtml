@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Create a Student";
+}
+
+<h2>Create Student</h2> 
+
+<form>
+    <div class="form-group row">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">First and last name</span>
+            </div>
+            <input type="text" class="form-control">
+            <input type="text" class="form-control">
+        </div>
+        <label for="Major" class="col-sm-2 col-form-label">Major</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Major" placeholder="Major">
+        </div>
+        <label for="Age" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Age" placeholder="Age">
+        </div>
+    </div>
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="GenderRadiosMale" value="Male">
+                    <label class="form-check-label" for="GenderRadiosMale">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="GenderRadiosFemale" value="Male">
+                    <label class="form-check-label" for="GenderRadiosFemale">
+                        Female
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="GenderRadiosNeutral" value="Neutral">
+                    <label class="form-check-label" for="GenderRadiosNeutral">
+                        Neutral/Other
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-outline-success">Submit</button>
+            <button type="reset" class="btn btn-outline-warning">Clear</button>
+
+        </div>
+
+    </div>
+</form>
